@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | Siba Sai EMS</title>
+
+<style>
+/* ================= GLOBAL ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg, #021b1e, #043a40);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar{
+    height:60px;
+    background:#011f23;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+.logo{
+    color:#00f7ff;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:0.5px;
+}
+
+/* NAVBAR */
+.navbar a{
+    position:relative;
+    color:#9ffcff;
+    text-decoration:none;
+    padding:8px 18px;
+    border-radius:22px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.4s;
+    overflow:hidden;
+}
+
+.navbar a::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,#00f7ff,#00ff9d,#6a5cff);
+    opacity:0;
+    transition:0.4s;
+    z-index:-1;
+    border-radius:22px;
+}
+
+.navbar a:hover{
+    color:#011f23;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(0,247,255,0.35);
+}
+
+.navbar a:hover::before{
+    opacity:1;
+}
+
+/* ================= LOGIN WRAPPER ================= */
+.login-wrapper{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+}
+
+/* ================= LOGIN CARD ================= */
+.login-card{
+    width:100%;
+    max-width:420px;
+    background:#022b30;
+    padding:45px;
+    border-radius:30px;
+    box-shadow:0 25px 50px rgba(0,0,0,0.5);
+    text-align:center;
+    animation:slideUp 1.1s ease forwards;
+}
+
+/* TITLE */
+.login-card h1{
+    font-size:32px;
+    font-weight:800;
+    background:linear-gradient(270deg,#00f7ff,#00ff9d,#6a5cff);
+    background-size:400% 400%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:gradientMove 6s ease infinite;
+}
+
+.login-card p{
+    font-size:15px;
+    color:#c8ffff;
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+/* LABEL */
+.login-card label{
+    display:block;
+    text-align:left;
+    font-weight:600;
+    margin-bottom:6px;
+    margin-top:18px;
+    color:#b7fefe;
+}
+
+/* INPUT */
+.login-card input{
+    width:100%;
+    padding:12px 14px;
+    border-radius:10px;
+    border:none;
+    font-size:15px;
+    outline:none;
+    background:#011f23;
+    color:#ffffff;
+    transition:0.3s;
+}
+
+.login-card input::placeholder{
+    color:#7fdede;
+}
+
+.login-card input:focus{
+    box-shadow:0 0 12px #00f7ff;
+}
+
+/* BUTTON */
+.login-card button{
+    margin-top:30px;
+    width:100%;
+    padding:12px;
+    background:linear-gradient(135deg,#00f7ff,#00ff9d);
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    color:#011f23;
+    transition:0.4s;
+}
+
+.login-card button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 18px #00f7ff;
+}
+
+/* FOOTER */
+.login-footer{
+    margin-top:25px;
+    font-size:14px;
+    color:#9ffcff;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(80px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <div class="logo">Siba Sai EMS</div>
+    <div class="navbar">
+        <a href="login.html">Login</a>
+    </div>
+</div>
+
+<div class="login-wrapper">
+    <div class="login-card">
+
+        <h1>Welcome Back</h1>
+        <p>Login to access Employee Management System</p>
+
+        <form action="login" method="post">
+            <label>Username</label>
+            <input type="text" name="uname" placeholder="Enter username" required>
+
+            <label>Password</label>
+            <input type="password" name="pword" placeholder="Enter password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="login-footer">
+            Secure login for authorized users only
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
